@@ -100,4 +100,6 @@ ENV/
 # mypy
 .mypy_cache/
 
+data
+.floyd*
 RUNS/
