@@ -18,7 +18,7 @@ Kitti Road dataset
 (http://www.cvlibs.net/datasets/kitti/eval_road.php) from [here](http://www.cvlibs.net/download.php?file=data_road.zip).  
 
 ##### Implementation
-The implementation had to be written inthe `main.py` module indicated by the "TODO" comments.  
+The implementation had to be written in the `main.py` module indicated by the "TODO" comments.  
 
 
 ### General approach
@@ -49,35 +49,41 @@ The batch size was set so that the training used around 60% of total GPU memory 
 
 The parameters used are the following:
 
-	*	EPOCHS = 45
-	*   BATCH SIZE = 5
-	*	KEEP PROB = 0.8
-	*   LEARNING RATE = 1e-3
-	*	L2 SCALE = 1e-3
-	*	STD DEVIATION KERNEL INITIALIZER = 1e-2
+* EPOCHS = 45
+* BATCH SIZE = 5
+* KEEP PROB = 0.8
+* LEARNING RATE = 1e-3
+* L2 SCALE = 1e-3
+* STD DEVIATION KERNEL INITIALIZER = 1e-2
 
  
 
-##### Run
+### Results
 
-### Submission
-1. Ensure you've passed all the unit tests.
-2. Ensure you pass all points on [the rubric](https://review.udacity.com/#!/rubrics/989/view).
-3. Submit the following in a zip file.
- - `helper.py`
- - `main.py`
- - `project_tests.py`
- - Newest inference images from `runs` folder  (**all images from the most recent run**)
+The final average loss on the training set was **0.101**, but it was still decreasing, so with more epochs it would have achieved something better.
+
+![loss](./images/loss_graph.png)	 
+
+
+##### Here are some of the test images:  
+
+![1](./images/1.png)   
+
+![2](./images/2.png)   
+
+![3](./images/3.png)   
+
+![4](./images/4.png)   
+
+![5](./images/5.png)   
+
+![6](./images/6.png)   
+
+![7](./images/7.png)   
+
+![8](./images/8.png)   
+
+![9](./images/9.png)   
+
  
- ### Tips
-- The link for the frozen `VGG16` model is hardcoded into `helper.py`.  The model can be found [here](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/vgg.zip)
-- The model is not vanilla `VGG16`, but a fully convolutional version, which already contains the 1x1 convolutions to replace the fully connected layers. Please see this [forum post](https://discussions.udacity.com/t/here-is-some-advice-and-clarifications-about-the-semantic-segmentation-project/403100/8?u=subodh.malgonde) for more information.  A summary of additional points, follow. 
-- The original FCN-8s was trained in stages. The authors later uploaded a version that was trained all at once to their GitHub repo.  The version in the GitHub repo has one important difference: The outputs of pooling layers 3 and 4 are scaled before they are fed into the 1x1 convolutions.  As a result, some students have found that the model learns much better with the scaling layers included. The model may not converge substantially faster, but may reach a higher IoU and accuracy. 
-- When adding l2-regularization, setting a regularizer in the arguments of the `tf.layers` is not enough. Regularization loss terms must be manually added to your loss function. otherwise regularization is not implemented.
- 
-### Using GitHub and Creating Effective READMEs
-If you are unfamiliar with GitHub , Udacity has a brief [GitHub tutorial](http://blog.udacity.com/2015/06/a-beginners-git-github-tutorial.html) to get you started. Udacity also provides a more detailed free [course on git and GitHub](https://www.udacity.com/course/how-to-use-git-and-github--ud775).
 
-To learn about REAMDE files and Markdown, Udacity provides a free [course on READMEs](https://www.udacity.com/courses/ud777), as well. 
-
-GitHub also provides a [tutorial](https://guides.github.com/features/mastering-markdown/) about creating Markdown files.
